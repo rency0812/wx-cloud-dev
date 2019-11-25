@@ -1,0 +1,11 @@
+<view class="add-box">
+  <view class="wx-input">
+    <label>姓名</label>
+    <input type="text" bindinput="nameValue" placeholder="请输入你的名字"/>
+  </view>
+  <view class="wx-input">
+    <label>职业</label>
+    <input type="text" bindinput="workValue" placeholder="请输入你的职业"/>
+  </view>
+  <button bindtap="add" class="add-sub">保存</button>
+</view>

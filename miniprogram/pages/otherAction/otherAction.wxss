@@ -1,0 +1,12 @@
+input{
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+}
+button{
+  background: #299fff;
+  color: #fff;
+}
+.wx-input{
+  padding: 10px;
+}
