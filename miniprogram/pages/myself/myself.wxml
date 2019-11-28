@@ -1,0 +1,5 @@
+<view class="my-self">
+  <view>
+    <image src="{{src}}"></image>
+  </view>
+</view>

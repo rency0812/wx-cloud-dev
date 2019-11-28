@@ -7,10 +7,50 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    time: null,
+    resData: null,
+    background: ['../../images/kasha.jpeg', '../../images/jianji.jpeg',
+    '../../images/yaoji.jpeg', '../../images/akali.jpeg',
+    '../../images/kaer.jpeg', '../../images/timg.jpeg'
+    ]
   },
-
+  addPage () {
+    if (app.globalData.openid !== 'o3A4M0Rwwtgs7ebYvZasrbZCFqaM') {
+      return
+    }
+    wx.navigateTo({
+      url: '../otherAction/otherAction'
+    })
+  },
+  getData(){
+    const db = wx.cloud.database()
+    db.collection('counters').orderBy('count', 'desc').get({
+      success: res => {
+        this.setData({
+          resData: res.data[0]
+        })
+      }
+    })
+  },
+  timePlay(){
+    var d = new Date();
+    var hh = d.getHours();
+    var mm = d.getMinutes();
+    var ss = d.getSeconds();
+    var H = hh<10?'0'+hh:hh+'';
+    var M = mm<10?'0'+mm:mm+'';
+    var S = ss<10?'0'+ss:ss+'';
+    this.setData({
+      time: `${H}:${M}:${S}`
+    })
+    const self = this
+    setTimeout(self.timePlay,1000)
+  },
   onLoad: function() {
+    this.onGetOpenid()
+    this.getData()
+    this.timePlay()
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -54,15 +94,15 @@ Page({
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
-        wx.navigateTo({
-          url: '../userConsole/userConsole',
-        })
+        // wx.navigateTo({
+        //   url: '../userConsole/userConsole',
+        // })
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
-        })
+        // wx.navigateTo({
+        //   url: '../deployFunctions/deployFunctions',
+        // })
       }
     })
   },

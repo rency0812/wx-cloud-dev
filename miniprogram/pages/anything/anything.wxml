@@ -1,0 +1,4 @@
+<view class="any wrap">
+  <view class="list-item">js大法好, 大前端</view>
+  <view class="list-item" wx:for="{{resData}}" wx:key="*this">{{item.codes}}</view>
+</view>

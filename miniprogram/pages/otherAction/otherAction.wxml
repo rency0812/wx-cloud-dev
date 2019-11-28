@@ -4,8 +4,18 @@
     <input type="text" bindinput="nameValue" placeholder="请输入你的名字"/>
   </view>
   <view class="wx-input">
-    <label>职业</label>
-    <input type="text" bindinput="workValue" placeholder="请输入你的职业"/>
+    <label>职业/其他</label>
+    <input type="text" bindinput="workValue" placeholder="请输入"/>
   </view>
   <button bindtap="add" class="add-sub">保存</button>
+  <view class="wx-input">
+    <label>三言两语</label>
+    <textarea type="text" bindinput="descVal" placeholder="请输入"></textarea>
+  </view>
+  <button bindtap="descSub" class="add-sub">保存</button>
+  <view class="wx-input">
+    <label>js大法</label>
+    <textarea type="text" bindinput="jsVal" placeholder="请输入"></textarea>
+  </view>
+  <button bindtap="codeSub" class="add-sub">保存</button>
 </view>

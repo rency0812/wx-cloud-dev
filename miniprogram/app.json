@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mySay/mySay",
+    "pages/myself/myself",
+    "pages/anything/anything",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -17,8 +20,33 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "其他都是渣渣",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fafafa",
+    "selectedColor": "#ff0000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "三言两语",
+        "pagePath": "pages/mySay/mySay"
+      },
+      {
+        "text": "什么都有",
+        "pagePath": "pages/anything/anything"
+      },
+      {
+        "text": "朕",
+        "pagePath": "pages/myself/myself"
+      }
+    ],
+    "position": "bottom"
   },
   "sitemapLocation": "sitemap.json"
 }

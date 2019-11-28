@@ -53,4 +53,17 @@
       <text>其他操作</text>
     </navigator>
   </view>
+  <!-- content -->
+  <view class="content">
+    <swiper indicator-dots autoplay>
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="time">{{time}}</view>
+  <view class="desc title">{{resData.name}}</view>
+  <view class="desc" bindtap="addPage">{{resData.work}}</view>
 </view>

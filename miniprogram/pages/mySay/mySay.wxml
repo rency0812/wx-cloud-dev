@@ -1,0 +1,4 @@
+<view class="my-say wrap">
+  <view class="list-item">人生易老天难老, 老夫，撸不动了</view>
+  <view class="list-item" wx:for="{{resData}}" wx:key="*this">{{item.say}}</view>
+</view>
